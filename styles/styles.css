@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #70c0ce;
+  width: 100%;
+  height: 100%;
+}
+
+header, main {
+  text-align: center;
+  margin: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #0b0505;
+}
+
+p {
+  color: #100404;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #c08dc5;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.game-rules-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-rules {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+}
+
+.rules-link {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  border: 10px 20px;
+  border-color: antiquewhite;
+  box-shadow: 3px 3px 10px #161217;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.rules-link:hover {
+  transform: rotate(25deg);
+}
+
+.center-container {
+  display: inline-block;
+  align-self: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+button.icon-buttons {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #80c8f4;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+}
+
+.button-container {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.button-container p {
+  margin-top: 5px;
+
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.icon-buttons {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30% auto;
+}
+
+#scissors {
+  background-image: url("./images/scissor.png");
+}
+
+#rock {
+  background-image: url("./images/fist.png");
+}
+
+#paper {
+  background-image: url("./images/open-hands.png");
+}
+
+#lizard {
+  background-image: url("./images/lizardHand.png");
+}
+
+#spock {
+  background-image: url("./images/spockHand.png");
+}
+
