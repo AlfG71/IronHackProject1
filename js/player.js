@@ -6,16 +6,16 @@ class Player {
     this.currentChoice = null;
   }
 
-  makeChoice() {
-    // Sets the player's choice for the current round.
+  makeChoice(choice) {
+    this.currentChoice = choice
   }
 
   incrementScore() {
-    // Increases the player's score when they win a round.
+    this.score++;
   }
 
   resetScore() {
-    // Resets the player's score when starting a new game.
+    this.score = 0;
   }
 }
 

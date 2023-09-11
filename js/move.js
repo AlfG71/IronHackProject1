@@ -1,6 +1,10 @@
 class Move {
-  constructor() {
-    this.name = null;
+  static getMoves() {
+    return ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
+  }
+
+  static getWinner(choice1, choice2) {
+    
   }
 
   beats(move) {
@@ -16,22 +20,24 @@ class Move {
   }
 }
 
-class Rock extends Move {
+module.exports = Move;
 
-}
+// class Rock extends Move {
 
-class Paper extends Move {
+// }
 
-}
+// class Paper extends Move {
 
-class Scissors extends Move {
+// }
 
-}
+// class Scissors extends Move {
 
-class Lizard extends Move {
+// }
 
-}
+// class Lizard extends Move {
 
-class Spock extends Move {
-  
-}
+// }
+
+// class Spock extends Move {
+
+// }

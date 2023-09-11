@@ -5,16 +5,16 @@ class Game {
 
   constructor(playerName, gameLength) {
 
-    this.humanPlayer = new Human();
+    this.humanPlayer = new Human(playerName);
     this.computerPlayer = new Computer();
-    this.roundsToWin = 0;
-    this.gameLength = 0;
+    // this.roundsToWin = gameLength;
+    this.currentRound = 1;
 
   }
 
   startGame() {
    // Starts a new game, initializes players, and sets up the game based on player input.
-   return "And we are off!";
+   console.log("And we are off!");
   }
 
   playRound() {
@@ -30,12 +30,16 @@ class Game {
   }
 
   resetGame() {
-    //  Resets the game state to play another game.
+    this.humanPlayer.resetScore();
+    this.computerPlayer.resetScore();
+    this.currentRound = 1;
   }
 
 }
 
-const newGame = new Game();
+module.exports = Game;
 
-console.log(newGame.startGame());
-console.log(newGame);
+// const newGame = new Game();
+
+// console.log(newGame.startGame());
+// console.log(newGame);
