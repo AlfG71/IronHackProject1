@@ -133,3 +133,12 @@ button:hover {
   background-image: url("./images/spockHand.png");
 }
 
+.hidden {
+  display: none;
+}
+
+#user-name-display {
+  margin: 20px;
+  font-weight: bold;
+  font-size: xx-large;
+}

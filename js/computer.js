@@ -1,5 +1,3 @@
-const Player = require('./player.js');
-
 class Computer extends Player {
 
   constructor() {
@@ -15,6 +13,10 @@ class Computer extends Player {
     return name;
   }
 
-}
+  generateComputerChoice() {
+    const choices = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
+    const randomIndex = Math.floor(Math.random() * choices.length);
+    return choices[randomIndex];
+  }
 
-module.exports = Computer;
+}

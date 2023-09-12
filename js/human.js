@@ -1,5 +1,3 @@
-const Player = require('./player.js');
-
 class Human extends Player {
   constructor(name) {
     super(name);
@@ -9,5 +7,3 @@ class Human extends Player {
     this.name = name;
   }
 }
-
-module.exports = Human;

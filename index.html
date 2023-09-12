@@ -17,9 +17,12 @@
     <a class="rules-link" href="rules.html" target="_blank">Rules</a>
 
     <div>
-      <h3>Please enter your name:</h3>
-      <input type="text" id="player-name" placeholder="Enter your name">
-      <button id="submit-name">Submit</button>
+      <form id="name-form">
+        <label for="player-name"><h3>Please enter your name:</h3></label>
+        <input type="text" id="player-name" placeholder="Enter your name" required>
+        <button id="submit-name">Submit</button>
+      </form>
+      <div id="user-name-display"></div>
     </div>
 
   </header>
@@ -28,7 +31,7 @@
     <div class="center-container">
       <div class="game-container">
         <div class="player-choice">
-          <h2>Please choose one</h2>
+          <h2 id="player-choice-display">What's your choice?</h2>
 
           <div class="button-container">
             <button class="icon-buttons" id="rock"></button>
@@ -57,22 +60,18 @@
         </div>
 
         <div class="computer-choice">
-          <h2>Computer Choice</h2>
-          <!-- Display computer's choice here? -->
-          <p id="computer-choice">#%$#%$</p>
+          <h2 id="computer-choice">Computer Choice</h2>
         </div>
 
         <div class="result">
-          <h2>Result</h2>
-          <!-- Display the round result here -->
-          <p id="round-result">Play again?</p>
+          <h2 id="round-result">Result</h2>
+          <p id="play-again" class="hidden">Play again?</p>
         </div>
       </div>
     </div>
 
     <div class="score">
       <h2>Score</h2>
-      <!-- Display the player's and computer's scores here -->
       <p id="player-score">Player: </p>
       <p id="computer-score">Computer: </p>
     </div>
@@ -86,6 +85,10 @@
     <a href="https://www.flaticon.com/free-icons/hand" title="hand icons">Hand icons created by Pixel perfect - Flaticon</a>
   </footer>
 
+  <script src="./js/player.js"></script>
+  <script src="./js/computer.js"></script>
+  <script src="./js/human.js"></script>
+  <script src="./js/game.js"></script>
   <script src="./js/index.js"></script>
 
 </body>
