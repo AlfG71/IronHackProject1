@@ -68,11 +68,13 @@ h2 {
   box-shadow: 3px 3px 10px #161217;
   padding: 10px;
   border-radius: 30px;
+  background-color: #c08dc5;
+  color: black;
 }
 
-.rules-link:hover {
+/* .rules-link:hover {
   transform: rotate(25deg);
-}
+} */
 
 .center-container {
   display: inline-block;
@@ -91,6 +93,7 @@ button.icon-buttons {
   cursor: pointer;
   width: 150px;
   height: 50px;
+  box-shadow: 3px 3px 10px #161217;
 }
 
 .button-container {
@@ -134,9 +137,9 @@ button:hover {
   background-image: url("./images/spockHand.png");
 }
 
-#rock:hover, #paper:hover, #scissors:hover, #spock:hover, #lizard:hover {
-  transform: rotate(360deg);
-  transition: transform 1.5s ease;
+.rules-link:hover, #rock:hover, #paper:hover, #scissors:hover, #spock:hover, #lizard:hover {
+  transform: rotate(25deg);
+  transition: transform .5s ease;
 }
 
 .hidden {

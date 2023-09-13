@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const game = new Game();  // Create a new instance of the Game class
+  game.disableChoiceButtons(); // Does not allow for user to make a choice prior ro entering their name
 
   // Handle player name input form
   const nameForm = document.getElementById('name-form');
@@ -22,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     game.startGame(playerName);
     nameForm.classList.add('hidden');
+
+    game.enableChoiceButtons(); // Choice buttons can now be used
   });
 
   // Event listeners for player choices
