@@ -2,14 +2,19 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #70c0ce;
+  background-color: rgb(112, 192, 206);
   width: 100%;
   height: 100%;
 }
 
 header, main {
   text-align: center;
-  margin: 10px;
+}
+
+#title {
+  width: 50%;
+  max-width: 100%;
+  height: auto;
 }
 
 footer {
@@ -17,17 +22,13 @@ footer {
   margin-top: 50px;
 }
 
-h1 {
-  color: #333;
+h1, p {
+  color: black;
 }
 
 h2 {
   font-size: 1.2rem;
-  color: #0b0505;
-}
-
-p {
-  color: #100404;
+  color: black;
 }
 
 .game-container {
@@ -131,6 +132,11 @@ button:hover {
 
 #spock {
   background-image: url("./images/spockHand.png");
+}
+
+#rock:hover, #paper:hover, #scissors:hover, #spock:hover, #lizard:hover {
+  transform: rotate(360deg);
+  transition: transform 1.5s ease;
 }
 
 .hidden {

@@ -22,7 +22,8 @@ class Game {
           clearInterval(intervalId);
           setTimeout(() => {
             this.annouceGameWinner(gameWinner);
-          }, 8000);
+            this.disableChoiceButtons();
+          }, 7000);
           // this.resetGame();
         }
       }
@@ -145,6 +146,26 @@ class Game {
 
   }
 
+  enableChoiceButtons() {
+
+    const choiceButtons = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+    
+    choiceButtons.forEach(choice => {
+      document.getElementById(choice).disabled = false;
+    });
+
+  }
+
+  disableChoiceButtons() {
+
+    const choiceButtons = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+
+    choiceButtons.forEach(choice => {
+      document.getElementById(choice).disabled = true;
+    });
+
+  }
+
   resetRound() {
 
     // Reset the currentChoice properties for each player
@@ -157,11 +178,7 @@ class Game {
     document.getElementById('rules-text').textContent = '';
     document.getElementById('player-choice-display').textContent = "What's your choice?";  //What's your choice?
 
-    // Enable choice buttons for the next round
-    const choiceButtons = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
-    choiceButtons.forEach(choice => {
-      document.getElementById(choice).disabled = false;
-    });
+    this.enableChoiceButtons();
 
     // Hide the play-again prompt
     document.getElementById('play-again').classList.add('hidden');
@@ -171,7 +188,7 @@ class Game {
 
 
   checkForGameWinner(player1, player2) {
-    // Checks if there's a game winner based on the score and the number of rounds to win.
+    // Checks if there's a game winner based on the score to win.
     if (player1.score >= 3) {
       return `${player1.name} wins the game!!!`;
     } else if (player2.score >= 3) {
