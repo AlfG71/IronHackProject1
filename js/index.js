@@ -1,6 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
   const game = new Game();  // Create a new instance of the Game class
-  game.startGame(); // Initialize the game
+  // game.startGame(); // Initialize the game
+
+  // Handle player name input form
+  const nameForm = document.getElementById('name-form');
+  const nameDisplay = document.getElementById('user-name-display');
+  const computerDisplay = document.getElementById('computer-name-display');
+  let playerName;
+  let computerName = game.computerPlayer.name
+
+  nameForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const nameInput = document.getElementById('player-name');
+    playerName = nameInput.value;
+
+    nameDisplay.textContent = `Welcome, ${playerName}!  Let's begin the game.`;
+
+    setTimeout(() => {
+      computerDisplay.textContent = `${computerName} is eager to play against you today.`
+    }, 1000)
+
+    game.startGame(playerName);
+    nameForm.classList.add('hidden');
+  });
 
   // Event listeners for player choices
   const rockButton = document.getElementById('rock');
@@ -12,11 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const choiceButtons = [rockButton, paperButton, scissorsButton, lizardButton, spockButton];
 
   function updatePlayerChoice(choice) {
-    game.handlePlayerChoice(choice);
-    document.getElementById('player-choice-display').textContent = `You have chosen ${choice}`;
+    game.playRound(choice);
 
-    choiceButtons.forEach(buttone => {
-      buttone.disabled = true;
+    setTimeout(() => {
+      document.getElementById('player-choice-display').textContent = `${playerName} has chosen ${choice}`;
+    }, 1000);
+
+
+    choiceButtons.forEach(button => {
+      button.disabled = true;
     })
   }
 
@@ -26,20 +52,32 @@ document.addEventListener('DOMContentLoaded', () => {
   lizardButton.addEventListener('click', () => updatePlayerChoice('Lizard'));
   spockButton.addEventListener('click', () => updatePlayerChoice('Spock'));
 
-  // Handle player name input form
-  const nameForm = document.getElementById('name-form');
-  const nameDisplay = document.getElementById('user-name-display');
+  function handleGameEnd(result) {
 
-  nameForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const nameInput = document.getElementById('player-name');
-    const playerName = nameInput.value;
+    document.getElementById('round-result').textContent = result;
 
-    nameDisplay.textContent = `Welcome, ${playerName}!  Let's begin the game.`;
+    choiceButtons.forEach(button => {
+      button.disabled = true;
+    });
 
-    game.startGame(playerName);
-    nameForm.classList.add('hidden');
-  });
+    const playAgain = document.getElementById('play-again');
+
+    // playAgain.classList.remove('hidden');
+
+    playAgain.addEventListener('click', () => {
+      game.resetRound();
+
+      document.getElementById('round-result').textContent = ''
+
+      choiceButtons.forEach(button => {
+        button.disabled = true;
+      });
+
+    });
+
+    // playAgain.classList.add.apply('hidden');
+  }
+
 });
 
 
