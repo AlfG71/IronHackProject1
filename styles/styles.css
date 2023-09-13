@@ -62,7 +62,6 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
-  transition: transform 0.3s ease;
   border: 10px 20px;
   border-color: antiquewhite;
   box-shadow: 3px 3px 10px #161217;
@@ -71,10 +70,6 @@ h2 {
   background-color: #c08dc5;
   color: black;
 }
-
-/* .rules-link:hover {
-  transform: rotate(25deg);
-} */
 
 .center-container {
   display: inline-block;
@@ -146,8 +141,54 @@ button:hover {
   display: none;
 }
 
+.name-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#submit-name {
+  display: inline-block;
+  font-size: 10px;
+  text-decoration: none;
+  border: 10px 20px;
+  box-shadow: 3px 3px 10px #161217;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #c08dc5;
+  text-align: center;
+}
+
 #user-name-display, #computer-name-display {
   margin: 20px;
   font-weight: bold;
   font-size: xx-large;
+}
+
+#player-name,
+#submit-name {
+  margin: 5px;
+}
+
+.form-label-text-input {
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  font-size: 1.2rem;
+  /* font-weight: bold; */
+  text-decoration: none;
+  border: 10px 20px;
+  /* border-color: none; */
+  box-shadow: 3px 3px 10px #161217;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #c08dc5;
+  /* margin: 5px; Add margin for spacing */
+  text-align: center;
+}
+
+.form-label-text-input::placeholder {
+  color: black;
+  text-align: center;
 }

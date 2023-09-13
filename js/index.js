@@ -22,8 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000)
 
     game.startGame(playerName);
-    nameForm.classList.add('hidden');
 
+    nameForm.classList.add('hidden');
+    
     game.enableChoiceButtons(); // Choice buttons can now be used
   });
 

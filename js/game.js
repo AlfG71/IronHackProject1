@@ -12,6 +12,9 @@ class Game {
 
     this.humanPlayer = new Human(playerName);
     this.displayUserName(playerName);
+    const nameForm = document.getElementById('name-form');
+
+    nameForm.classList.add('hidden');
 
     const intervalId = setInterval(() => {
       if (this.humanPlayer.score < 3 && this.computerPlayer.score < 3) {
@@ -149,7 +152,7 @@ class Game {
   enableChoiceButtons() {
 
     const choiceButtons = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
-    
+
     choiceButtons.forEach(choice => {
       document.getElementById(choice).disabled = false;
     });
