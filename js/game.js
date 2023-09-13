@@ -23,7 +23,7 @@ class Game {
           setTimeout(() => {
             this.annouceGameWinner(gameWinner);
           }, 8000);
-          this.resetGame();
+          // this.resetGame();
         }
       }
     }, 2000);
@@ -57,8 +57,8 @@ class Game {
     // }, 6000);
 
     setTimeout(() =>{
-      document.getElementById('player-score').textContent = `Player: ${this.humanPlayer.score}`;
-      document.getElementById('computer-score').textContent = `Computer: ${this.computerPlayer.score}`;
+      document.getElementById('player-score').textContent = `${this.humanPlayer.name}: ${this.humanPlayer.score}`;
+      document.getElementById('computer-score').textContent = `${this.computerPlayer.name}: ${this.computerPlayer.score}`;
 
       this.resetRound();
     }, 7000);
@@ -66,10 +66,13 @@ class Game {
   }
 
   displayUserName() {
+
     return this.name;
+
   }
 
   evaluateChoices(playerChoice, computerChoice) {
+
     const rules = {
       Rock: ['Scissors', 'Lizard'],
       Paper: ['Rock', 'Spock'],
@@ -91,7 +94,9 @@ class Game {
   }
 
   evaluateRules(choice1, choice2) {
+
     const currentCombination = `${choice1}-${choice2}`
+
     switch (currentCombination) {
       case 'Spock-Scissors':
       case 'Scissors-Spock':
@@ -137,9 +142,11 @@ class Game {
         return `You both chose the same.`
         // return `${choice1}-${choice2}` used for debugging purposes
     }
+
   }
 
   resetRound() {
+
     // Reset the currentChoice properties for each player
     this.humanPlayer.resetCurrentChoice();
     this.computerPlayer.resetCurrentChoice();
@@ -158,6 +165,7 @@ class Game {
 
     // Hide the play-again prompt
     document.getElementById('play-again').classList.add('hidden');
+
   }
 
 
@@ -176,13 +184,18 @@ class Game {
   annouceGameWinner(result) {
     const gameWinner = document.getElementById('game-result');
     gameWinner.textContent = result;
+
+    const playAgainButton = document.getElementById('play-again');
+    playAgainButton.classList.remove('hidden');
   }
 
-  resetGame() {
-    this.humanPlayer.resetScore();
-    this.computerPlayer.resetScore();
-    this.currentRound = 1;
-  }
+  // resetGame() {
+
+  //   this.humanPlayer.resetScore();
+  //   this.computerPlayer.resetScore();
+  //   this.currentRound = 1;
+
+  // }
 
 }
 

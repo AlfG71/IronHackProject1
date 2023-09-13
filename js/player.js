@@ -22,7 +22,7 @@ class Player {
   resetCurrentChoice() {
 
     this.currentChoice = null;
-    
+
   }
 
   resetScore() {

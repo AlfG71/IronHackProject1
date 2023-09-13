@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   const game = new Game();  // Create a new instance of the Game class
-  // game.startGame(); // Initialize the game
 
   // Handle player name input form
   const nameForm = document.getElementById('name-form');
@@ -9,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let playerName;
   let computerName = game.computerPlayer.name
 
+  // Handle prelims bfore user makes a choice
   nameForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const nameInput = document.getElementById('player-name');
@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const choiceButtons = [rockButton, paperButton, scissorsButton, lizardButton, spockButton];
 
+  // everytime user makes a choice, the information is updated
   function updatePlayerChoice(choice) {
     game.playRound(choice);
 
@@ -52,31 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
   lizardButton.addEventListener('click', () => updatePlayerChoice('Lizard'));
   spockButton.addEventListener('click', () => updatePlayerChoice('Spock'));
 
-  function handleGameEnd(result) {
+  const playAgainButton = document.getElementById('play-again');
 
-    document.getElementById('round-result').textContent = result;
+  // once there is a winner if the player wants to play again, the page will refresh
+  playAgainButton.addEventListener('click', () => {
 
-    choiceButtons.forEach(button => {
-      button.disabled = true;
-    });
+    location.reload();
 
-    const playAgain = document.getElementById('play-again');
-
-    // playAgain.classList.remove('hidden');
-
-    playAgain.addEventListener('click', () => {
-      game.resetRound();
-
-      document.getElementById('round-result').textContent = ''
-
-      choiceButtons.forEach(button => {
-        button.disabled = true;
-      });
-
-    });
-
-    // playAgain.classList.add.apply('hidden');
-  }
+  });
 
 });
 
