@@ -104,46 +104,46 @@ class Game {
     switch (currentCombination) {
       case 'Spock-Scissors':
       case 'Scissors-Spock':
-        return `Spock smashes scissors so...`;
+        return `Spock smashes scissors with impeccable logic!`;
         break;
       case 'Scissors-Paper':
       case 'Paper-Scissors':
-        return `Scissors cuts paper so...`;
+        return `Scissors cuts paper like a fruit ninja!`;
         break;
       case 'Paper-Rock':
       case 'Rock-Paper':
-        return `Paper covers rock so...`;
+        return `Paper covers rock and swiftly leaves the scene of the crime`;
         break;
       case 'Rock-Lizard':
       case 'Lizard-Rock':
-        return `Rock crushes lizard so...`;
+        return `Rock crushes lizard and lizards says "OUCH!!!"`;
         break;
       case 'Lizard-Spock':
       case 'Spock-Lizard':
-        return `Lizard poisons Spock so...`;
+        return `Lizard poisons Spock with a masterful move`;
         break;
       case 'Scissors-Lizard':
       case 'Lizard-Scissors':
-        return `Scissors decapitates lizard so...`;
+        return `Scissors decapitates lizard with surgical precission`;
         break;
       case 'Scissors-Rock':
       case 'Rock-Scissors':
-        return `Rock crushes scissors so...`;
+        return `As it always has, rock crushes scissors!`;
         break;
       case 'Spock-Rock':
       case 'Rock-Spock':
-        return `Spock vaporizes rock so...`;
+        return `Spock vaporizes rock with futuristic technology!`;
         break;
       case 'Spock-Paper':
       case 'Paper-Spock':
-        return `Paper disproves Spock so...`;
+        return `Paper disproves Spock logically and diplomatically after a brief battle of wits`;
         break;
       case 'Lizard-Paper':
       case 'Paper-Lizard':
-        return `Lizard eats paper so...`;
+        return `Lizard eats paper with its voracious appetite, a culinary surprise`;
         break;
       default:
-        return `You both chose the same.`
+        return `You both chose the same so...`
         // return `${choice1}-${choice2}` used for debugging purposes
     }
 
