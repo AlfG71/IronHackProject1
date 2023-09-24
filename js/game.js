@@ -191,6 +191,7 @@ class Game {
 
 
   checkForGameWinner(player1, player2) {
+
     // Checks if there's a game winner based on the score to win.
     if (player1.score >= 3) {
       return `${player1.name} wins the game!!!`;
@@ -199,6 +200,7 @@ class Game {
     } else {
       return false;
     }
+    
   }
 
   annouceGameWinner(result) {
